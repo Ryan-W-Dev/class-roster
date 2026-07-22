@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A bilingual desktop application for adding personnel to a local Excel class roster."
+    />
+    <title>Class Roster</title>
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+
+  <body>
+    <main class="app-shell">
+      <form id="personnelForm" class="roster-form" autocomplete="off" novalidate>
+        <header class="app-header">
+          <div class="brand-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M9 5h6M8 3h8a1 1 0 0 1 1 1v2h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h1V4a1 1 0 0 1 1-1Z" />
+              <path d="M8 11h1m3 0h4M8 15h1m3 0h4" />
+            </svg>
+          </div>
+          <div>
+            <p class="eyebrow" data-translate="eyebrow">Personnel Management</p>
+            <h1 data-translate="title">Class Roster</h1>
+            <p class="subtitle" data-translate="subtitle">
+              Add personnel to a locally stored attendance workbook.
+            </p>
+          </div>
+        </header>
+
+        <fieldset>
+          <legend data-translate="personnelDetails">Personnel details</legend>
+          <div class="form-grid">
+            <label class="field" for="fullName">
+              <span data-translate="fullNameLabel">Full name</span>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                maxlength="100"
+                autocomplete="name"
+                placeholder="Enter full name"
+                data-placeholder="fullNamePlaceholder"
+                required
+              />
+            </label>
+
+            <label class="field" for="rank">
+              <span data-translate="rankLabel">Rank</span>
+              <select id="rank" name="rank" required>
+                <option value="" selected disabled data-translate="selectRank">Select rank</option>
+                <option value="Major" data-translate="major">Major</option>
+                <option value="Captain" data-translate="captain">Captain</option>
+                <option value="First Lieutenant" data-translate="firstLieutenant">First Lieutenant</option>
+                <option value="Second Lieutenant" data-translate="secondLieutenant">Second Lieutenant</option>
+                <option value="Warrant Officer First Class" data-translate="warrantOfficerFirstClass">Warrant Officer First Class</option>
+                <option value="Warrant Officer" data-translate="warrantOfficer">Warrant Officer</option>
+                <option value="Staff Sergeant" data-translate="staffSergeant">Staff Sergeant</option>
+                <option value="Sergeant" data-translate="sergeant">Sergeant</option>
+                <option value="Corporal First Class" data-translate="corporalFirstClass">Corporal First Class</option>
+                <option value="Corporal" data-translate="corporal">Corporal</option>
+                <option value="Lance Corporal" data-translate="lanceCorporal">Lance Corporal</option>
+                <option value="Private First Class" data-translate="privateFirstClass">Private First Class</option>
+                <option value="Private" data-translate="private">Private</option>
+              </select>
+            </label>
+
+            <label class="field" for="militaryId">
+              <span data-translate="militaryIdLabel">Military ID</span>
+              <input
+                type="text"
+                id="militaryId"
+                name="militaryId"
+                maxlength="40"
+                placeholder="Enter military ID"
+                data-placeholder="militaryIdPlaceholder"
+                required
+              />
+            </label>
+
+            <label class="field" for="unit">
+              <span data-translate="unitLabel">Unit</span>
+              <select id="unit" name="unit" required>
+                <option value="" selected disabled data-translate="selectUnit">Select unit</option>
+                <option value="Land Forces" data-translate="landForces">Land Forces</option>
+                <option value="National Guard" data-translate="nationalGuard">National Guard</option>
+                <option value="Presidential Guard" data-translate="presidentialGuard">Presidential Guard</option>
+                <option value="Navy" data-translate="navy">Navy</option>
+                <option value="Joint Aviation Command" data-translate="aviation">Joint Aviation Command</option>
+              </select>
+            </label>
+
+            <label class="field field--wide" for="currentDate">
+              <span data-translate="dateLabel">Date</span>
+              <input type="date" id="currentDate" name="currentDate" readonly required />
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend data-translate="courseDetails">Course details</legend>
+          <label class="field" for="course">
+            <span data-translate="courseLabel">Course</span>
+            <select id="course" name="course" required>
+              <option value="" selected disabled data-translate="selectCourse">Select course</option>
+              <option value="Master Gunners Course" data-translate="masterGunner">Master Gunners Course</option>
+              <option value="Master Armors Course" data-translate="masterArmor">Master Armors Course</option>
+              <option value="Instructor" data-translate="instructor">Instructor</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <p class="storage-note" data-translate="storageNote">
+          Records are saved locally to an Excel workbook in your Documents folder.
+        </p>
+
+        <p id="formStatus" class="form-status" role="status" aria-live="polite" hidden></p>
+
+        <footer class="form-actions">
+          <button type="submit" class="button button--primary">
+            <span data-submit-label data-translate="save">Save to roster</span>
+          </button>
+          <button
+            type="button"
+            class="button button--secondary"
+            id="languageButton"
+            aria-label="Switch language"
+          >
+            العربية
+          </button>
+        </footer>
+      </form>
+    </main>
+
+    <script type="module" src="./javascript/app.js"></script>
+  </body>
+</html>

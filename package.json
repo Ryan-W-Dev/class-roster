@@ -1,0 +1,36 @@
+{
+  "name": "class-roster",
+  "version": "2.0.1",
+  "description": "A bilingual Tauri desktop application that stores class-roster entries in a local Excel workbook.",
+  "keywords": [
+    "tauri",
+    "rust",
+    "javascript",
+    "excel",
+    "desktop-application",
+    "bilingual"
+  ],
+  "author": "Ryan Wynn",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "npm run build",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.11.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "vite": "^7.3.6"
+  }
+}
